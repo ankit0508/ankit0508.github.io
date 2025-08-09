@@ -59,6 +59,63 @@
 <script>
 (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="zHgRnFzHqYDh_cWH488yf";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
 </script>
+<style>
+  /* Popup styling */
+  #eyeCarePopup {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #f0f8ff;
+    color: #333;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    font-family: Arial, sans-serif;
+    z-index: 1000;
+    max-width: 250px;
+    font-size: 14px;
+  }
+
+  #eyeCarePopup button {
+    margin-top: 8px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+  }
+
+  #eyeCarePopup button:hover {
+    background: #0056b3;
+  }
+</style>
+
+<div id="eyeCarePopup">
+  👀 <strong>Eye care time!</strong><br>
+  Roll your eyes for a few seconds.<br>
+  <button onclick="closeEyeCarePopup()">Got it</button>
+</div>
+
+<script>
+  function showEyeCarePopup() {
+    document.getElementById('eyeCarePopup').style.display = 'block';
+  }
+
+  function closeEyeCarePopup() {
+    document.getElementById('eyeCarePopup').style.display = 'none';
+  }
+
+  // Show popup every 5 minutes (300,000 ms)
+  setInterval(showEyeCarePopup, 300000);
+
+  // Optional: show the first one after 5 minutes
+  setTimeout(showEyeCarePopup, 300000);
+</script>
+
 </body>
 </html>
+
 
